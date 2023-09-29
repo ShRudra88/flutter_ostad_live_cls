@@ -33,15 +33,32 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title : Text("Home"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Hello world'),
-            TextButton(onPressed: (){}, child: Text('Tap here'),),
-            ElevatedButton(onPressed: (){}, child: Text('Tap here'),),
-          ],
-        ),
+      body: Column(
+       children: [
+         Switch(value: true, onChanged: (bool value){}),
+         ElevatedButton(onPressed: (){
+           showDialog(
+               barrierColor: Colors.pinkAccent,
+               barrierDismissible: false,
+
+               context: context, builder: (context)
+               {
+
+                 return AlertDialog(
+                   title: Text('Alert'),
+                   content: Text( // subtitile/ body
+                     'You are in danger'
+                   ),
+                   actions: [
+                     TextButton(onPressed: (){
+                       Navigator.pop(context);
+                     }, child: Text('Cancel')),
+                     TextButton(onPressed: (){}, child: Text('Okay')),
+                   ],
+                 );
+               });
+         }, child: Text('Show dialog.'))
+       ],
       ),
     );
   }
