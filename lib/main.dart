@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ostad_live_cls/home_screen.dart';
 
 void main()
 {
@@ -7,7 +6,6 @@ void main()
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,3 +15,48 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class HomeScreen extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.black12,
+        title: Text('Home'),
+      ),
+      backgroundColor: Colors.lightGreen,
+      body: Column(
+        children: <Widget>[
+          Flexible(
+            flex: 4,
+            fit: FlexFit.tight,
+            child: Container(
+              color: Colors.red,
+              height: 50,
+            ),
+          ),
+          Flexible(
+            flex: 3,
+            fit: FlexFit.tight,
+            child: Container(
+              color: Colors.green,
+              height: 50,
+            ),
+          ),
+          Flexible(
+            flex: 6,
+            fit: FlexFit.tight,
+            child: Container(
+              color: Colors.blue,
+              height: 50,
+            ),
+          ),
+        ],
+      )
+
+    );
+  }
+}
+
