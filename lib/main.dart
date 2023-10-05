@@ -23,30 +23,32 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.black12,
         title: Text('Home'),
       ),
-      backgroundColor: Colors.lightGreen,
-      body: Column(
-        children: <Widget>[
-          Container(
-            color: Colors.red,
-            width: 50.0,
-            height: 50.0,
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.green,
-              height: 50.0,
-              width: 80,
+      body: Center(
+        child: Stack( // postitioned sudhu stack e use hoi
+          children: [
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.pink,
             ),
-          ),
-          Container(
-            color: Colors.blue,
-            width: 100,
-            height: 100,
-          ),
-        ],
+            Positioned( // postitined.fill porota fill korbe
+              right: 0,
+              left: 0,
+              child: Container(
+                width: 50,
+                height: 50,
+                color: Colors.green,
+              ),
+            ),
+            Container(
+              width: 30,
+              height: 20,
+              color: Colors.black,
+            )
+          ],
+        ),
       )
     );
   }
